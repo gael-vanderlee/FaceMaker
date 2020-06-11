@@ -25,6 +25,7 @@ Notes:
 from collections import OrderedDict
 import numpy as np
 import tensorflow as tf
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tensorboard import summary as summary_lib
 from tensorboard.plugins.custom_scalar import layout_pb2
 

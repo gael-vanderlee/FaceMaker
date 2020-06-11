@@ -10,7 +10,6 @@ import dnnlib.tflib as tflib
 import config
 from encoder.generator_model import Generator
 from encoder.perceptual_model import PerceptualModel, load_images
-#from tensorflow.keras.models import load_model
 from keras.models import load_model
 import config
 from keras.applications.resnet50 import preprocess_input
@@ -133,7 +132,7 @@ def main():
     ff_model = None
 
     # Optimize (only) dlatents by minimizing perceptual loss between reference and generated images in feature space
-    for images_batch in tqdm(split_to_batches(ref_images, args.batch_size), total=len(ref_images)//args.batch_size):
+    for images_batch in split_to_batches(ref_images, args.batch_size):
         names = [os.path.splitext(os.path.basename(x))[0] for x in images_batch]
         if args.output_video:
           video_out = {}
@@ -169,7 +168,7 @@ def main():
         if dlatents is not None:
             generator.set_dlatents(dlatents)
         op = perceptual_model.optimize(generator.dlatent_variable, iterations=args.iterations, use_optimizer=args.optimizer)
-        pbar = tqdm(op, leave=False, total=args.iterations)
+        pbar = tqdm(op, leave=False, total=args.iterations, ncols=100)
         vid_count = 0
         best_loss = None
         best_dlatent = None
