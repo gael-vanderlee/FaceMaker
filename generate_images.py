@@ -38,9 +38,13 @@ if __name__ == "__main__":
                                                LANDMARKS_MODEL_URL, cache_subdir='temp'))
     RAW_IMAGES_DIR = args.raw_dir
     ALIGNED_IMAGES_DIR = args.aligned_dir
+    aligned_ims = set([imname.split("_")[0] for imname in os.listdir(ALIGNED_IMAGES_DIR)])
 
     landmarks_detector = LandmarksDetector(landmarks_model_path)
     for img_name in os.listdir(RAW_IMAGES_DIR):
+        if not config.redo_images:
+            if img_name.split(".")[0] in aligned_ims:
+                continue
         print('Aligning %s ...' % img_name)
         try:
             raw_img_path = os.path.join(RAW_IMAGES_DIR, img_name)

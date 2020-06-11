@@ -21,6 +21,7 @@ aligned_dir = project_dir / "outputs" / "aligned_images/"
 gen_images_dir = project_dir / "outputs" / "generated_images/"
 latents_dir = project_dir / "outputs" / "latents_images/"
 run_dir_ignore = ['results', 'datasets', 'cache']
+redo_images = False
 
 # experimental - replace Dense layers with TreeConnect
 use_treeconnect = False
