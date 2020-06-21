@@ -15,6 +15,7 @@ jupyter = "*"
 tensorflow-gpu = "==1.15.3"
 requests = "*"
 imutils = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
