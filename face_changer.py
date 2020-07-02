@@ -35,10 +35,10 @@ def move_and_show(latent_vector, direction, coeffs):
     plt.show()
 
 
-def change_face(image="FannyMagnifique_01", direction="smile", coeffs=None):
+def change_face(image="maface_01", direction="gender", coeffs=None):
 
     if coeffs is None:
-        coeffs = [-1, 0, 1]
+        coeffs = [-2, 0, 2]
 
     directions = {
         "smile": 'ffhq_dataset/latent_directions/smile.npy',
