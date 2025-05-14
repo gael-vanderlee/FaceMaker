@@ -1,6 +1,6 @@
 # Face Maker
 
-![Generated Face Example](out/output.png)
+![Generated Face Example](out/gender_slider.png)
 
 This project allows you to generate and manipulate face images using StyleGAN. You can explore the latent space of StyleGAN to change facial attributes like age, gender, smile, and more.
 
