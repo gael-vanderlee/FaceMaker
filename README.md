@@ -14,13 +14,13 @@ This project allows you to generate and manipulate face images using StyleGAN. Y
 
 ## Core Components
 
-*   **StyleGAN Generator**: The core model (likely FFHQ pre-trained) used for image synthesis.
+*   **StyleGAN Generator**: The core model (FFHQ pre-trained) used for image synthesis.
 *   **Image Encoder**: Models (e.g., EfficientNet, ResNet) trained to map input images to StyleGAN's latent space (W or W+). This allows editing of user-provided images.
 *   **Latent Direction Vectors**: Pre-computed or dynamically discoverable vectors (e.g., `smile.npy`, `gender.npy`, `age.npy`) that, when added to a face's latent code, modify a specific attribute.
 *   **Manipulation Scripts/Notebooks**:
     *   `face_changer.py`: A script to load a latent vector, apply a directional change, and visualize the results.
-    *   `Play_with_latent_directions.ipynb`: Likely an interactive notebook for exploring latent space manipulations.
-    *   `Learn_direction_in_latent_space.ipynb`: A notebook probably dedicated to the methodology of finding semantic directions.
+    *   `Play_with_latent_directions.ipynb`: An interactive notebook for exploring latent space manipulations.
+    *   `Learn_direction_in_latent_space.ipynb`: A notebook dedicated to the methodology of finding semantic directions.
     *   `StyleGAN_Encoder_Tutorial.ipynb`: A tutorial on encoding images into StyleGAN's latent space.
 
 ## How it Works
